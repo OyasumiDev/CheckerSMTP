@@ -30,7 +30,7 @@ test@example.com:password123
 
 another@example.com:mysecurepassword
 
-Save this file with a name, for example, smtp_credentials.txt.
+Save this file with a name, for example, mails-check.
 
 ## Run the script:
 Make sure the credentials file is in the same directory as the script or provide the correct path to the file.
