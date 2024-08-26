@@ -78,7 +78,7 @@ def show_progress():
             if accounts_checked >= total_emails:
                 break
         time.sleep(1)
-    print(f"Resultado: {accounts_checked}/{accounts_loaded} Chekeados | Fakes: {accounts_failed} | Reales: {accounts_valid}")
+    print(f"Result: {accounts_checked}/{accounts_loaded} Checked | Fakes: {accounts_failed} | Real: {accounts_valid}")
 
 def handle_exit(signum, frame):
     sys.exit(0)
@@ -104,14 +104,14 @@ def main():
 | | | | | | | | | | | | \\/| | | | \\/| | | | | |\\/ | | | | | | | | | | | |
 |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
 """)
-    file_path = input("Ingresa el TXT de SMTPs: ")
+    file_path = input("Add TXT about SMTPs: ")
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             emails_to_check = [tuple(line.strip().split(':', 1)) for line in file if line.strip()]
 
         start_script(emails_to_check)
     except FileNotFoundError:
-        logging.error("Archivo incorrecto.")
+        logging.error("Incorrect file.")
 
 if __name__ == "__main__":
     main()
